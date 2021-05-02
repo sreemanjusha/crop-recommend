@@ -1,0 +1,104 @@
+<!-- index.html-->
+
+{% extends "base.html" %}
+
+{% block title %}
+	Crop Predictor
+{% endblock %}
+
+{% block insideJumbotron %}
+	<h1>Crop Predictor</h1>
+	<hr class="my-4">
+	<p class="lead">Predicts the crops, those can be grown on a soil, given its parameters.</p>
+{% endblock %}
+
+{% block body %}
+	<form action="{{ url_for('results') }}" method="post">
+
+		<!-- Nitrogen -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+		    	<span class="input-group-text">Ratio of Nitrogen content in soil</span>
+			</div>
+			<input type="text" class="form-control" name="N" required="required">
+			<div class="input-group-append">
+		    	<span class="input-group-text">.00</span>
+		  	</div>
+		</div>
+
+		<!-- Phosphorous -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+		    	<span class="input-group-text">Ratio of Phosphorous content in soil</span>
+			</div>
+			<input type="text" class="form-control" name="P" required="required">
+			<div class="input-group-append">
+		    	<span class="input-group-text">.00</span>
+		  	</div>
+		</div>
+
+		<!-- Potassium -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+		    	<span class="input-group-text">Ratio of Potassium content in soil</span>
+			</div>
+			<input type="text" class="form-control" name="K" required="required">
+			<div class="input-group-append">
+		    	<span class="input-group-text">.00</span>
+		  	</div>
+		</div>
+
+		<!-- Temperature -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+		    	<span class="input-group-text">Temperature in degree Celsius</span>
+			</div>
+			<input type="text" class="form-control" name="Temperature" required="required">
+			<div class="input-group-append">
+		    	<span class="input-group-text">degree Celsius</span>
+		  	</div>
+		</div>
+
+		<!-- Humidity -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+		    	<span class="input-group-text">Relative Humidity in %</span>
+			</div>
+			<input type="text" class="form-control" name="Humidity" required="required">
+			<div class="input-group-append">
+		    	<span class="input-group-text">%</span>
+		  	</div>
+		</div>
+
+		<!-- pH -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+		    	<span class="input-group-text">pH value of the soil</span>
+			</div>
+			<input type="text" class="form-control" name="pH" required="required">
+			<div class="input-group-append">
+		    	<span class="input-group-text">pH</span>
+		  	</div>
+		</div>
+
+		<!-- Rainfall -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+		    	<span class="input-group-text">Rainfall in mm</span>
+			</div>
+			<input type="text" class="form-control" name="Rainfall" required="required">
+			<div class="input-group-append">
+		    	<span class="input-group-text">mm</span>
+		  	</div>
+		</div>
+
+		<!-- Form submit btn -->
+		<div class="text-center">
+			<button type="submit" class="btn btn-primary">Predict Crops</button>
+		</div>
+
+	</form>
+
+	
+	
+{% endblock %}
